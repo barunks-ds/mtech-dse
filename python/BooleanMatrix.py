@@ -44,7 +44,7 @@ class BooleanMatrix(object):
             self.mCols = args[1]
             self.mMatrix = np.array([[False]* self.mCols] * self.mRows, dtype=np.bool)
         else:
-            raise ValueError("incorrect parameters passed:"+len(args))
+            raise ValueError("incorrect parameters passed:"+str(len(args)))
         
         
     def dot(self, b):
@@ -113,3 +113,5 @@ class BooleanMatrix(object):
                 temp.mMatrix[i][j] = ~self.mMatrix[i][j]
         return temp
         
+    def __getitem__(self, key):
+        return self.mMatrix[key]
