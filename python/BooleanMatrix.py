@@ -3,6 +3,27 @@
 Created on Sun Aug  9 20:24:22 2020
 
 @author: Riddhi
+Usage: 
+    mat = BooleanMatrix([[0, 0, 1], [1, 0, 0], [1, 1, 0]])
+    print(mat)
+    b2 = mat.dot(mat)
+    print(b2)
+    b3 = b2.dot(mat)
+    print(b3)
+    b4 = b3.dot(mat)
+    print(b4)
+
+    a = BooleanMatrix([[0, 1, 1], [0, 0, 1], [0, 0, 0]])
+    print(a)
+    b = BooleanMatrix([[0, 0, 0], [1, 0, 0], [1, 1, 0]])
+    print(b)
+    aor = a | b
+    print(aor)
+    aand = a & b
+    print(aand)
+    anot = ~aand
+    print(anot)
+
 """
 import numpy as np
 
