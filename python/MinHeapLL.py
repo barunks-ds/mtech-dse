@@ -104,7 +104,6 @@ class MinHeapLL(object):
             self.root = None
             return deleted
         lastNode = self.findLastNode()
-        print("Last node: "+str(lastNode))
         if lastNode != None:
             if lastNode.parent.left == lastNode:
                 lastNode.parent.left = None
@@ -135,7 +134,7 @@ H = MinHeapLL()
 H.insert(10)
 H.insert(6)
 H.insert(5)
-#H.insert(4)
+H.insert(4)
 
 print(H)
 d = H.delete()
@@ -153,15 +152,4 @@ print(H)
 d = H.delete()
 print ("Deleting: ",d, end="\n")
 print(H)
-d = H.delete()
-print ("Deleting: ",d, end="\n")
-print(H)
-d = H.delete()
-print ("Deleting: ",d, end="\n")
-print(H)
-d = H.delete()
-print ("Deleting: ",d, end="\n")
-print(H)
-d = H.delete()
-print ("Deleting: ",d, end="\n")
-print(H)
+

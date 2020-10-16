@@ -331,10 +331,10 @@ class XlsParser:
     def parseFile(self, path):
         self.path = path
         print("parsing file:",self.path)
-        self.file = pd.ExcelFile(self.path)
-        self.sheets = self.file.sheet_names
-        print("Sheets:",self.sheets)
-        self.dataFrame = self.file.parse(self.sheets[0])
+        self.file = pd.read_csv(self.path)
+        #self.sheets = self.file.sheet_names
+        #print("Sheets:",self.sheets)
+        self.dataFrame = self.file #self.file.parse(self.sheets[0])
         #print(self.dataFrame)
         row, col = self.dataFrame.shape
         print("Row:",row,"Column:",col)
@@ -343,7 +343,7 @@ class XlsParser:
         print(self.dataFrame.columns)
     
     def getSheetName(self):
-        return self.sheets[0]
+        return None #self.sheets[0]
     
     def getDataFrame(self):
         return self.dataFrame
