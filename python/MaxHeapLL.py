@@ -82,7 +82,7 @@ class MaxHeapLL(object):
                 temp = node.right.value
                 node.right.value = node.value
                 node.value = temp
-                self.heapifyTopToBottom(self.right)
+                self.heapifyTopToBottom(node.right)
         elif node.left != None and node.left.value > node.value:
             temp = node.value
             node.value = node.left.value
