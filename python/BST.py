@@ -78,12 +78,24 @@ class Bst(object):
         else:
             self.inorderRecursive(self.root, lst)
         return lst
+    
+    def heightRecursive(self, node):
+        if node == None:
+            return 0
+        return 1 + max(self.heightRecursive(node.left), self.heightRecursive(node.right))
+        
+    def findHeight(self):
+        return max(self.heightRecursive(self.root.left), self.heightRecursive(self.root.right))
 
 import random        
 tree = Bst()
+print("\nItems to insert: ",end = ' ')
 for i in range(0,10):
-    tree.insert(random.randint(1,30))
-
-print("\nPreorder: ",tree.preOrder())
+    val = random.randint(1,30)
+    print(val, end=" ")
+    tree.insert(val)
+print("\n")
+print("\npreorder: ",tree.preOrder())
 print("\nInorder: ",tree.inOrder())
 print("\nPostorder: ",tree.postOrder())
+print("\nHeight:",tree.findHeight())
